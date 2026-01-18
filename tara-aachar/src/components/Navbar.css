@@ -1,0 +1,226 @@
+/* Reset all inherited styles for navbar */
+.navbar * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.navbar {
+  background: #2d5016;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid #1a3009;
+  box-shadow: none;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: -0.5px;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-logo:hover {
+  color: #90ee90 !important;
+  transform: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-link {
+  /* Reset all inherited styles */
+  all: unset;
+  
+  /* Apply our specific styles */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  
+  /* Button styling */
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background-color: #2e4b1f !important;
+  
+  /* Transitions */
+  transition: background-color 0.3s ease;
+  
+  /* Reset unwanted effects */
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transform: none !important;
+  backdrop-filter: none !important;
+}
+
+.navbar-link:hover,
+.navbar-link:focus,
+.navbar-link:active,
+.navbar-link:visited:hover {
+  background-color: #3a5f28 !important;
+  color: #ffffff !important;
+  transform: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.navbar-link:visited {
+  background-color: #2e4b1f !important;
+  color: #ffffff !important;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background: #2d5016;
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    min-height: calc(100vh - 60px);
+    justify-content: flex-start;
+    padding-top: 3rem;
+    box-shadow: none !important;
+  }
+
+  .navbar-menu.active {
+    left: 0;
+  }
+
+  .navbar-link {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    background-color: #2e4b1f !important;
+    border-radius: 8px;
+    width: calc(100% - 2rem);
+    display: block;
+    text-align: center;
+  }
+
+  .navbar-link:hover,
+  .navbar-link:focus,
+  .navbar-link:active,
+  .navbar-link:visited:hover {
+    background-color: #3a5f28 !important;
+    color: #ffffff !important;
+  }
+
+  .navbar-link:visited {
+    background-color: #2e4b1f !important;
+    color: #ffffff !important;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .navbar-container {
+    padding: 0 2rem;
+  }
+  
+  .navbar-menu {
+    gap: 1rem;
+  }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1400px) {
+  .navbar-container {
+    max-width: 1400px;
+    padding: 0 2rem;
+  }
+}
+
+/* Dark mode - keep same styles */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: #1a3009;
+    border-bottom: 1px solid #0f1a05;
+  }
+  
+  .navbar-menu {
+    background: #1a3009;
+  }
+}
